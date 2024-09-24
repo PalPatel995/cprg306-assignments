@@ -3,7 +3,6 @@ export default function Page() {
       <main>
         <h1>Shopping List</h1>
 
- (
     <div>
       <h1>Pal Patel</h1>
       <p>
@@ -13,7 +12,6 @@ export default function Page() {
         </a>
       </p>
     </div>
-  )
 
 export default StudentInfo;
       </main>
