@@ -12,8 +12,6 @@ export default function Page() {
         </a>
       </p>
     </div>
-
-export default StudentInfo;
       </main>
     );
   }
