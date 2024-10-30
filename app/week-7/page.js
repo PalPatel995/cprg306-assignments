@@ -1,16 +1,20 @@
 // /app/week-7/page.js
-"use client"; // Add this directive at the top
+"use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import NewItem from './new-item';
 import ItemList from './item-list';
-import itemsData from './items.json';
 
 export default function Page() {
-  // Initialize state with itemsData from items.json
-  const [items, setItems] = useState(itemsData);
+  const [items, setItems] = useState([]);
 
-  // Event handler to add a new item to the list
+  // Fetch items.json on component mount
+  useEffect(() => {
+    fetch('/app/week-7/items.json')
+      .then((response) => response.json())
+      .then((data) => setItems(data));
+  }, []);
+
   const handleAddItem = (newItem) => {
     setItems((prevItems) => [...prevItems, newItem]);
   };
@@ -18,9 +22,7 @@ export default function Page() {
   return (
     <main className="p-6">
       <h1 className="text-2xl font-bold mb-4">Shopping List</h1>
-      {/* Pass handleAddItem to NewItem component */}
       <NewItem onAddItem={handleAddItem} />
-      {/* Pass items state to ItemList component */}
       <ItemList items={items} />
     </main>
   );
