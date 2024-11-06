@@ -1,3 +1,4 @@
+"use client";
 import { useState } from 'react';
 import MealIdeas from './meal-ideas';
 import ItemList from './item-list';
