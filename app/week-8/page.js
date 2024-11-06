@@ -3,6 +3,7 @@ import { useState } from 'react';
 import MealIdeas from './meal-ideas';
 import ItemList from './item-list';
 import NewItem from './new-item';
+import MealIdeas from './meal-ideas';
 
 function Page() {
     const [selectedItemName, setSelectedItemName] = useState('');
